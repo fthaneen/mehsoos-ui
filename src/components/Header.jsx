@@ -86,13 +86,15 @@ const Header = () => {
                 key={item.id}
                 to={item.url}
                 onClick={handleClick}
-                className={`block relative font-code text-2xl uppercase ${
+                className={`block mt-0 relative font-code text-2xl uppercase ${
                   isRootPath
                     ? scrolled
                       ? "text-black"
                       : "text-white"
                     : "text-black"
-                } ${item.onlyMobile ? "lg:hidden" : ""} px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-extralight ${
+                } ${
+                  item.onlyMobile ? "lg:hidden" : ""
+                } px-6 mt-0 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-extralight ${
                   item.url === location.pathname ? "lg:text-[#0078F5]" : ""
                 } lg:leading-5 lg:hover:text-[#0078F5] xl:px-12`}
               >
@@ -109,7 +111,11 @@ const Header = () => {
             <Link
               to="/user-profile"
               className={`button hidden mr-8 font-extralight transition-colors ${
-                isRootPath ? (scrolled ? "text-black" : "text-white") : "text-black"
+                isRootPath
+                  ? scrolled
+                    ? "text-black"
+                    : "text-white"
+                  : "text-black"
               } hover:text-[#0078F5] lg:block`}
               style={{
                 fontFamily: "footerFont, sans-serif", // Apply the custom font here
@@ -122,13 +128,34 @@ const Header = () => {
           <>
             <Link
               to="/signup"
+              style={{
+                fontFamily: "footerFont, sans-serif", // Apply the custom font here
+              }}
               className={`button font-extralight hidden mr-8 transition-colors ${
-                isRootPath ? (scrolled ? "text-black" : "text-white") : "text-black"
+                isRootPath
+                  ? scrolled
+                    ? "text-black"
+                    : "text-white"
+                  : "text-black"
               } hover:text-[#0078F5] lg:block`}
             >
               New account
             </Link>
-            <Button className="hidden font-extralight lg:flex">Sign in</Button>
+            <Link
+              to="/login"
+              className={` mt-0 hidden button font-extralight  lg:flex  ${
+                isRootPath
+                  ? scrolled
+                    ? "text-black"
+                    : "text-white"
+                  : "text-black"
+              }`}
+              style={{
+                fontFamily: "footerFont, sans-serif", // Apply the custom font here
+              }}
+            >
+              SIGN IN
+            </Link>
           </>
         )}
 
@@ -138,7 +165,11 @@ const Header = () => {
           </span>
           <CiShoppingCart
             className={`ml-6 ${
-              isRootPath ? (scrolled ? "text-black" : "text-white") : "text-black"
+              isRootPath
+                ? scrolled
+                  ? "text-black"
+                  : "text-white"
+                : "text-black"
             }`}
             size={30}
           />
@@ -147,7 +178,11 @@ const Header = () => {
           <Link to={"/logout"} className="cursor-pointer relative">
             <IoExitOutline
               className={`ml-6 ${
-                isRootPath ? (scrolled ? "text-black" : "text-white") : "text-black"
+                isRootPath
+                  ? scrolled
+                    ? "text-black"
+                    : "text-white"
+                  : "text-black"
               }`}
               size={30}
             />

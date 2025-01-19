@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 const HomePageImage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -8,8 +8,8 @@ const HomePageImage = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -17,7 +17,11 @@ const HomePageImage = () => {
       <img
         src="/src/assets/Mahzooz3.png"
         alt="Mahzooz"
-        className={isScrolled ? 'h-20 w-20 object-contain transition-all duration-300' : 'h-[120px] w-[120px] object-contain transition-all duration-300'}
+        className={
+          isScrolled
+            ? "h-20 w-20 object-contain transition-all duration-300"
+            : "h-[120px] w-[120px] object-contain transition-all duration-300"
+        }
       />
     </div>
   );
@@ -35,7 +39,7 @@ const OtherPageImage = () => (
 
 const GradientTitle = () => {
   const location = useLocation();
-  
+
   return location.pathname === "/" ? <HomePageImage /> : <OtherPageImage />;
 };
 
