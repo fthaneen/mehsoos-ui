@@ -65,7 +65,7 @@ const Cart = () => {
                           <div className="flex-1">
                             <div className="text-white mb-1">Line Numbers:</div>
                             <div className="text-[#54A9FF] font-medium">
-                              {item.numbers.join(", ")}
+                              {item.numbers.numbers?.join(", ")}
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
