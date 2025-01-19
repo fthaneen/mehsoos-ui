@@ -78,7 +78,7 @@ const Header = () => {
           <div
             className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row"
             style={{
-              fontFamily: "footerFont, sans-serif", // Apply the custom font here
+              fontFamily: "footerFont, sans-serif",
             }}
           >
             {navigation.map((item) => (
@@ -112,7 +112,7 @@ const Header = () => {
                 isRootPath ? (scrolled ? "text-black" : "text-white") : "text-black"
               } hover:text-[#0078F5] lg:block`}
               style={{
-                fontFamily: "footerFont, sans-serif", // Apply the custom font here
+                fontFamily: "footerFont, sans-serif",
               }}
             >
               Profile{" "}
@@ -122,9 +122,12 @@ const Header = () => {
           <>
             <Link
               to="/signup"
-              className={`button font-extralight hidden mr-8 transition-colors ${
+              className={`button font-extralight hidden mr-8 transition-colors  ${
                 isRootPath ? (scrolled ? "text-black" : "text-white") : "text-black"
               } hover:text-[#0078F5] lg:block`}
+              style={{
+                fontFamily: "footerFont, sans-serif",
+              }}
             >
               New account
             </Link>

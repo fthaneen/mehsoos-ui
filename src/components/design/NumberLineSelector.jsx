@@ -74,7 +74,7 @@ const NumberLineSelector = () => {
         {/* Water Bottle Image */}
         <div className="absolute -right-2 -top-32 z-9999">
           <img
-            src="/src/assets/waterbottle.png"
+            src="/src/assets/waterbottle-min.png"
             alt="Water Bottle"
             className="w-32"
           />

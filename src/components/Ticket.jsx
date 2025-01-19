@@ -1,6 +1,7 @@
 import { brainwaveSymbol, check } from "../assets";
 import Button from "./Button";
 import NumberLineSelector from "./design/NumberLineSelector";
+import CountdownDisplay from "./design/Timer";
 
 const Ticket = ({ className = "" }) => {
   return (
@@ -14,6 +15,16 @@ const Ticket = ({ className = "" }) => {
             {/* Logo section */}
             <div className="mb-12 flex justify-center lg:justify-start">
               <img className="w-40 md:w-48 h-auto" />
+            </div>
+
+            {/* Counter section */}
+            <div className="mb-8 p-6 rounded-[2.4375rem] bg-blue-500/10 backdrop-blur-sm">
+              <h4 className="h4 mb-4 text-center font-semibold text-blue-600">
+                Lottery Draw Starts In:
+              </h4>
+              <p className="body-2 text-center text-blue-700 font-bold text-xl md:text-6xl">
+                <CountdownDisplay initialSeconds={15782807} />
+              </p>
             </div>
 
             {/* Jackpot section */}
